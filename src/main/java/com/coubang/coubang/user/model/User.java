@@ -1,4 +1,4 @@
-package com.coubang.coubang.user.customer.model;
+package com.coubang.coubang.user.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.coubang.coubang.common.BaseEntity;
 import com.coubang.coubang.user.Role;
+import com.coubang.coubang.user.customer.model.Address;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -22,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "customer")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Customer extends BaseEntity {
+public class User extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -38,10 +39,10 @@ public class Customer extends BaseEntity {
 	private Role role;
 
 	@Embedded
-	private Address address;
+	private com.coubang.coubang.user.customer.model.Address address;
 
 	@Builder
-	public Customer(Long id, String email, String password, Role role, Address address) {
+	public User(Long id, String email, String password, Role role, Address address) {
 		this.id = id;
 		this.email = email;
 		this.password = password;

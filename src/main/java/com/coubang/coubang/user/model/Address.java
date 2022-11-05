@@ -1,4 +1,4 @@
-package com.coubang.coubang.user.customer.model;
+package com.coubang.coubang.user.model;
 
 import javax.persistence.Embeddable;
 
