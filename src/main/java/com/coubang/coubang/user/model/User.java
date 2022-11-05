@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 import com.coubang.coubang.common.BaseEntity;
 import com.coubang.coubang.user.Role;
-import com.coubang.coubang.user.customer.model.Address;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -39,7 +38,7 @@ public class User extends BaseEntity {
 	private Role role;
 
 	@Embedded
-	private com.coubang.coubang.user.customer.model.Address address;
+	private Address address;
 
 	@Builder
 	public User(Long id, String email, String password, Role role, Address address) {
